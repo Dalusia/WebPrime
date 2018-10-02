@@ -1,0 +1,15 @@
+﻿@model List<int>
+@{
+    ViewData["Title"] = "The Grand List of Prime Numbers";
+}
+
+<ul>
+    <form action="prime/choose" method="post">
+        @{ int n = 1; }
+        @foreach (int i in @Model)
+        {
+            <li>P(@(n++)) = @i</li>
+            <button name="myPrime" value="@i">Choose @i</button>
+        }
+    </form>
+</ul>
